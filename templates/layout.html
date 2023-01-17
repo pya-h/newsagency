@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{{ url_for('static', path='img/favicon.ico') }}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', path='assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='assets/slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='assets/slick/slick-theme.css') }}">
+    <!-- icon css-->
+    <link rel="stylesheet" href="{{ url_for('static', path='assets/elagent-icon/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='assets/font-awesome/css/all.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='assets/animation/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/rtl.css') }}">
+    <title>بانک اخبار</title>
+</head>
+
+<body data-scroll-animation="true">
+
+    <div id="preloader">
+        <div id="ctn-preloader" class="ctn-preloader">
+            <div class="round_spinner">
+                <div class="spinner"></div>
+                <div class="text">
+                    <img src="{{ url_for('static', path='img/spinner_logo.png') }}" alt="">
+                    <h4>بانک اخبار</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body_wrapper">
+
+        {% block content %}
+
+        {% endblock %}
+
+        <footer class="footer_area f_bg_color">
+
+            <div class="footer_bottom text-center">
+                <div class="container">
+                    <p>بانک اخبار (2022)</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Back to top button -->
+    <a id="back-to-top" title="Back to Top"></a>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{{ url_for('static', path='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', path='js/pre-loader.js') }}"></script>
+    <script src="{{ url_for('static', path='assets/bootstrap/js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', path='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', path='js/parallaxie.js') }}"></script>
+    <script src="{{ url_for('static', path='js/TweenMax.min.js') }}"></script>
+    <script src="{{ url_for('static', path='js/jquery.parallax-scroll.js') }}"></script>
+    <script src="{{ url_for('static', path='assets/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', path='assets/counterup/jquery.counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', path='assets/counterup/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', path='assets/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ url_for('static', path='assets/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+
+    <script src="{{ url_for('static', path='js/main-rtl.js') }}"></script>
+</body>
+
+</html>

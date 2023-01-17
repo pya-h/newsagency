@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    {% include 'nav.html' %}
+
+    <section class="docly-banner-support">
+            <div class="banner-content text-right">
+                <div class="banner-content-wrapper">
+                    <h1 class="banner-title wow fadeInUp my-5">{{ item.title }} <span class="badge badge-pill bg-success p-2" style="height: 2.5rem; border-radius: 15px; font-weight: bolder; font-size: 16px">  &nbsp; {{ item.view_counter }} &nbsp; </span></h1>
+                    <p>دسته: {{ item.item_class }}</p>
+                    <hr />
+                    <div class="banner-search-form-wrapper wow fadeInUp my-5" data-wow-delay="0.5s">
+                        {{ item.body }}
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bottom-shape">
+                <img src="{{ url_for('static', path='img/banner-bottom-shape.png') }}" alt="banner">
+            </div>
+        {% if user %}
+            <div class="col-12 text-center">
+
+                <p class="badge bg-warning py-5 col-lg-6 col-md-6 col-9 text-wrap" style="border-radius: 10px; opacity: 0.9; height: 13rem; font-size: 30px">
+
+                    لطفا اول وارد حساب کاربری خودتان شوید...
+                </p>
+            </div>
+        {% endif %}
+    </section>
+
+{% endblock %}

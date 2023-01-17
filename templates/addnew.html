@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    {% include 'nav.html' %}
+
+    <section class="docly-banner-support">
+            <div class="banner-content text-right">
+                <div class="banner-content-wrapper">
+                    <h1 class="banner-title wow fadeInUp my-5">افزودن خبر</h1>
+                    <hr />
+                    <div class="banner-search-form-wrapper wow fadeInUp my-5" data-wow-delay="0.5s">
+                        <form action="/+" method="post" class="row login_form">
+                            <div class="col-lg-12 form-group">
+                                <div class="small_text">عنوان خبر</div>
+                                <input type="text" class="form-control" id="title" name="title" placeholder="عنوان" required>
+                            </div>
+                            <div class="col-lg-12 mb-5">
+                                <div class="small_text">متن خبر</div>
+                                <textarea required id="body" name="body" rows="10"
+                                    class="form-control" placeholder="متن خبر"> </textarea>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="small_text">دسته خبر</div>
+                                <input  required type="text" class="form-control" id="news_class" name="news_class" placeholder="دسته">
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <button type="submit" class="btn action_btn thm_btn">افزودن</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bottom-shape">
+                <img src="{{ url_for('static', path='img/banner-bottom-shape.png') }}" alt="banner">
+            </div>
+        {% if user %}
+            <div class="col-12 text-center">
+
+                <p class="badge bg-warning py-5 col-lg-6 col-md-6 col-9 text-wrap" style="border-radius: 10px; opacity: 0.9; height: 13rem; font-size: 30px">
+
+                    لطفا اول وارد حساب کاربری خودتان شوید...
+                </p>
+            </div>
+        {% endif %}
+    </section>
+
+{% endblock %}

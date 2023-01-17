@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="header_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="menu right-menu list-unstyled" style="float: right">
+                        {% if not user %}
+                            <li><a href="/login">ورود</a></li>
+                            <li><a href="/register">ثبت نام</a></li>
+                        {% else %}
+                            <li> سلام {{ user.email }} </li>
+                        {% endif %}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'nav.html' %}
+    <section class="docly-banner-support">
+        <div class="banner-content text-center">
+            <div class="banner-content-wrapper my-5">
+                <h1 class="banner-title wow fadeInUp">بانک اخبار</h1>
+
+            </div>
+            <hr />
+
+            <div class="mt-5 section_title text-center">
+
+                <h2 class="h_title wow fadeInUp">
+                    پر بازدید ترین اخبار مربوطه ی شما
+                </h2>
+
+                <p class="wow fadeInUp" data-wow-delay="0.3s">
+                    در اینجا می توانید پر بازدید ترین اخبار مرتبط با سلیقه ی خودتان را مشاهده کنید...
+                </p>
+            </div>
+        </div>
+
+        <div class="bottom-shape">
+            <img src="{{ url_for('static', path='img/banner-bottom-shape.png') }}" alt="banner">
+        </div>
+    </section>
+
+
+    <section class="community-posts-area">
+        <div class="container">
+            {% for news_class in news %}
+                <div class="button-container text-center">
+                    <span class="my-5 doc_border_btn btn-round border-light all_doc_btn wow fadeInUp animated">
+                        {{ news_class }}
+                    </span>
+                </div>
+
+                <div class="community-posts-wrapper">
+                    {% for item in news[news_class] %}
+                        <div class="community-post wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="post-content">
+                                <p class="author-avatar p-3" style="border-radius: 50%; border: 2px solid grey;">
+                                    {{ item.id }}
+                                </p>
+                                <div class="entry-content">
+                                    <h3 class="post-title"><a href="news/{{item.id}}">{{ item.title }}</a></h3>
+                                    <p>{{ news_class }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+
+
+        </div>
+
+    </section>
+{% endblock %}
